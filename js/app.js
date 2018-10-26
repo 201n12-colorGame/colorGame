@@ -5,10 +5,12 @@ var moves = 0;
 //initialize board state. for now, the entire board is initialized as zeroes.
 var initializeBoard = function(num){
     for(var i = 0; i < num; i++){
+        colorBoard.push([]);
         for(var j = 0; j < num; j++){
-            colorBoard[i][j] = 0;
+            colorBoard[i].push(0);
         }
     }
+    console.log(colorBoard);
     renderBoard();
 }
 
