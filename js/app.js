@@ -31,10 +31,24 @@ var renderBoard = function(){
                 //we assign the content of the board as a class name so that its appearance can be manipulated in CSS
             tdEl.id = i + ' ' + j;
                 // each box is named for its row and column for ease of manipulation
+            tdEl.addEventListener('click', tileClickHandler);
             trEl.appendChild(tdEl);
 
         }
     }
+}
+
+var tileClickHandler = function(eventObject){
+    //this is where the magic happens!
+
+    //increment moves and write to local storage
+    moves++;
+    localStorage.setItem('moves', moves);
+
+    //pull out the coordinates of the clicked box
+    var xCoord = eventObject.target.id;
+
+
 }
 
 initializeBoard(5);
