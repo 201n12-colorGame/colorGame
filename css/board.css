@@ -1,3 +1,8 @@
+table {
+    border-collapse:separate;
+    border-spacing: 4px;
+}
+
 .style0{
     background-color: black;
     height: 30px;
@@ -5,7 +10,7 @@
 }
 
 .style1{
-    background-color: white;
+    background-color: red;
     height: 30px;
     width: 30px;
 }
