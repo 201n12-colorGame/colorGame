@@ -6,6 +6,8 @@
 5. Discuss tomorrows game plan before end of work session
 6. Speak clearly and concisely
 7. Schedule hour break to eat or whatever - No code talk, team build
-7. Most importantly, be dope to one another
-8. All blame goes to Nicholas
+8. Most importantly, be dope to one another
+9. All blame goes to Nicholas
+10. If a conflict absolutely can't be resolved peacefully, we duke it out in mariokart
 11. Everyone comment your code throughly and clearly
+
