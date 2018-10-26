@@ -1,5 +1,6 @@
 'use strict';
 
+//test variables to use until game logic is complete
 var scoreTest = 37;
 var testName = 'Yoda';
 
@@ -12,3 +13,5 @@ var textNode = document.createTextNode(testName + ' - ' + scoreTest); //create t
 scorePass.appendChild(textNode); // append score to li
 
 document.getElementById('High_Scores').appendChild(scorePass);
+
+// thoughts - may need to put the score(s) and name(s) into an array and loop them
