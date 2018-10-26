@@ -8,3 +8,4 @@
 7. Schedule hour break to eat or whatever - No code talk, team build
 7. Most importantly, be dope to one another
 8. All blame goes to Nicholas
+11. Everyone comment your code throughly and clearly
