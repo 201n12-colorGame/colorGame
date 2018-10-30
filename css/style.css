@@ -1,0 +1,99 @@
+/* Main and about me */
+@font-face {
+  font-family: Games;
+  src: url("Games.ttf");
+}
+body{
+  font-family: Games;
+  color: white;
+  background-color: black;
+  width: 450px;
+  margin: auto;
+}
+h1{
+  font-size: 50px;
+  text-align: center;
+  color: rgb(214, 14, 214);
+  text-decoration: underline;
+}
+h2{
+  font-size: 40px;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 12px;
+  color: rgb(230, 4, 4);
+  text-decoration: underline;
+}
+p{
+  font-size: 25px;
+  border: thick;
+  border-style: solid;
+  padding: 5px;
+  text-align: justify; 
+}
+img{
+  width: 450px;
+  height: auto;
+  margin-bottom: 15px;
+}
+footer{
+  height: 100px;
+}
+
+/* Index */
+
+#high-score {
+ border: thick;
+ border-style: solid;
+ padding: 2px;
+ text-align: center;
+ width: 150px;
+ margin: auto;
+}
+
+section h4 {
+  padding-top: 9px;
+  color: rgb(230, 4, 4);
+  font-size: 20px;
+}
+
+section p {
+  border: none;
+  text-align: center;
+}
+
+header {
+  height: 30px;
+}
+
+#hero {
+  width: 250px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#game-name {
+ font-size: 150px; 
+ margin-bottom: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+  margin-top: 10px;
+}
+nav li {
+  text-align: center;
+}
+
+#in_footer {
+  text-align: center;
+}
+
+#in_company_logo {
+  text-decoration: none;
+  font-size: 30px;
+}
