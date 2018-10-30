@@ -1,7 +1,7 @@
 
 var colorBoard = [];
 var moves = 0;
-var size = 5;
+var size;
 
 //initialize board state. for now, the entire board is initialized as zeroes.
 var initializeBoard = function (num) {
@@ -125,4 +125,4 @@ var checkWin = function(){
 
 //increment moves and write to local storage
 
-initializeBoard(9);
+initializeBoard(8);
