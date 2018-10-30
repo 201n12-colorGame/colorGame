@@ -9,7 +9,8 @@ var initializeBoard = function (num) {
   for (var row = 0; row < num; row++) {
     colorBoard.push([]);
     for (var col = 0; col < num; col++) {
-      colorBoard[row].push(0);
+      // colorBoard[row].push(0);
+      colorBoard[row].push(Math.round(Math.random()));
     }
   }localStorage.getItem('winnerArray');
   console.log(colorBoard);
@@ -47,6 +48,9 @@ var renderBoard = function () {
 var tileClickHandler = function (eventObject) {
   //this is where the magic happens!
 
+  moves++;
+  localStorage.setItem('moves', moves);
+
   //pull out the coordinates of the clicked box
   var coord = eventObject.target.id.split(' ');
   coord[0] = parseInt(coord[0]);
@@ -64,6 +68,8 @@ var tileClickHandler = function (eventObject) {
       }
     }
   }
+
+
   renderBoard();
   if (checkWin()){
     winHandler();
@@ -78,14 +84,14 @@ var randomize = function(){
 
 var winHandler = function(){
   var name = prompt('Congratulations you won! Please enter your name');
-  var winnerArray = JSON.parse(localStorage.getItem('winnerArray'));
+  var winnerArray = JSON.parse(localStorage.getItem('winnerArr'));
 
   console.log(winnerArray);
   if (winnerArray === null){
     winnerArray = [];
   }
   winnerArray.push([name, moves]);
-  localStorage.setItem('winnerArray', winnerArray);
+  localStorage.setItem('winnerArr', JSON.stringify(winnerArray));
 };
 
 
@@ -118,7 +124,5 @@ var checkWin = function(){
 }
 
 //increment moves and write to local storage
-moves++;
-localStorage.setItem('moves', moves);
 
 initializeBoard(9);
