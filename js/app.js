@@ -7,6 +7,7 @@ var size;
 var initializeBoard = function (num) {
   size = num;
   moves = 0;
+  colorBoard = [];
   for (var row = 0; row < num; row++) {
     colorBoard.push([]);
     for (var col = 0; col < num; col++) {
