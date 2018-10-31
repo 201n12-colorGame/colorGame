@@ -1,5 +1,5 @@
 
-var colorBoard = [];
+var colorBoard = JSON.parse(localStorage.getItem('boardState'));
 var moves = 0;
 var size;
 
@@ -14,8 +14,8 @@ var initializeBoard = function (num) {
       // colorBoard[row].push(0);
       colorBoard[row].push(Math.round(Math.random()));
     }
-  }localStorage.getItem('winnerArray');
-  console.log(colorBoard);
+  }
+  localStorage.setItem('boardState', JSON.stringify(colorBoard));
   renderBoard();
 };
 
@@ -75,13 +75,25 @@ var tileClickHandler = function (eventObject) {
   renderBoard();
   if (checkWin()){
     winHandler();
+  } else {
+    localStorage.setItem('boardState', JSON.stringify(colorBoard));
   }
   // console.log(coord);
 };
 
 var winHandler = function(){
   var name = prompt('Congratulations! You won in ' + moves + ' moves. Please enter your name.');
-  var winnerArray = JSON.parse(localStorage.getItem('winnerArr'));
+  
+  var mode;
+  if(size === 4){
+    mode = 'easy';
+  } else if (size ===7){
+    mode = 'normal';
+  } else{
+    mode = 'hard'
+  }
+  
+  var winnerArray = JSON.parse(localStorage.getItem(mode));
 
   console.log(winnerArray);
   if (winnerArray === null){ //if we haven't gotten a winning score yet
@@ -95,7 +107,7 @@ var winHandler = function(){
   }
   winnerArray.splice(i, 0, [name, moves]);
 
-  localStorage.setItem('winnerArr', JSON.stringify(winnerArray));
+  localStorage.setItem(mode, JSON.stringify(winnerArray));
 
   initializeBoard(size);
 };
@@ -131,4 +143,11 @@ var checkWin = function(){
 
 //increment moves and write to local storage
 
-initializeBoard(4);
+if(colorBoard){
+  size = colorBoard.length;
+  renderBoard();
+  console.log(colorBoard);
+} 
+// else {
+//   initializeBoard(4);
+// }
