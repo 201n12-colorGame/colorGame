@@ -11,8 +11,8 @@ var initializeBoard = function (num) {
   for (var row = 0; row < num; row++) {
     colorBoard.push([]);
     for (var col = 0; col < num; col++) {
-      // colorBoard[row].push(0);
-      colorBoard[row].push(Math.round(Math.random()));
+      colorBoard[row].push(0);
+      //colorBoard[row].push(Math.round(Math.random()));
     }
   }
   localStorage.setItem('boardState', JSON.stringify(colorBoard));
