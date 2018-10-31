@@ -11,8 +11,8 @@ var initializeBoard = function (num) {
   for (var row = 0; row < num; row++) {
     colorBoard.push([]);
     for (var col = 0; col < num; col++) {
-      colorBoard[row].push(0);
-      //colorBoard[row].push(Math.round(Math.random()));
+      // colorBoard[row].push(0);
+      colorBoard[row].push(Math.round(Math.random()));
     }
   }
   localStorage.setItem('boardState', JSON.stringify(colorBoard));
@@ -107,9 +107,13 @@ var winHandler = function(){
   }
   winnerArray.splice(i, 0, [name, moves]);
 
+  winnerArray.splice(5);
+
   localStorage.setItem(mode, JSON.stringify(winnerArray));
 
   initializeBoard(size);
+
+  window.location.href = 'score.html';
 };
 
 

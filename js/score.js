@@ -16,6 +16,10 @@ var makeTable = function(mode){
   var arr = JSON.parse(localStorage.getItem(mode));
   var tableHolder = document.getElementById(mode);
 
+  if(!arr){
+    arr = [];
+  }
+
   for (var i = 0; i < arr.length; i++) {
     var scorePass = document.createElement('tr'); //create tr node
     //   var textNode = document.createTextNode(easyArray[i]); //create text node
