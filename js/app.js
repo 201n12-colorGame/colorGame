@@ -83,7 +83,17 @@ var tileClickHandler = function (eventObject) {
 
 var winHandler = function(){
   var name = prompt('Congratulations! You won in ' + moves + ' moves. Please enter your name.');
-  var winnerArray = JSON.parse(localStorage.getItem('winnerArr'));
+  
+  var mode;
+  if(size === 4){
+    mode = 'easy';
+  } else if (size ===7){
+    mode = 'normal';
+  } else{
+    mode = 'hard'
+  }
+  
+  var winnerArray = JSON.parse(localStorage.getItem(mode));
 
   console.log(winnerArray);
   if (winnerArray === null){ //if we haven't gotten a winning score yet
@@ -97,7 +107,7 @@ var winHandler = function(){
   }
   winnerArray.splice(i, 0, [name, moves]);
 
-  localStorage.setItem('winnerArr', JSON.stringify(winnerArray));
+  localStorage.setItem(mode, JSON.stringify(winnerArray));
 
   initializeBoard(size);
 };
@@ -137,6 +147,7 @@ if(colorBoard){
   size = colorBoard.length;
   renderBoard();
   console.log(colorBoard);
-} else {
-  initializeBoard(4);
-}
+} 
+// else {
+//   initializeBoard(4);
+// }
