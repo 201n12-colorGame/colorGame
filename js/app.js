@@ -1,5 +1,5 @@
 
-var colorBoard = [];
+var colorBoard = JSON.parse(localStorage.getItem('boardState'));
 var moves = 0;
 var size;
 
@@ -14,8 +14,8 @@ var initializeBoard = function (num) {
       // colorBoard[row].push(0);
       colorBoard[row].push(Math.round(Math.random()));
     }
-  }localStorage.getItem('winnerArray');
-  console.log(colorBoard);
+  }
+  localStorage.setItem('boardState', JSON.stringify(colorBoard));
   renderBoard();
 };
 
@@ -75,6 +75,8 @@ var tileClickHandler = function (eventObject) {
   renderBoard();
   if (checkWin()){
     winHandler();
+  } else {
+    localStorage.setItem('boardState', JSON.stringify(colorBoard));
   }
   // console.log(coord);
 };
@@ -131,4 +133,10 @@ var checkWin = function(){
 
 //increment moves and write to local storage
 
-initializeBoard(4);
+if(colorBoard){
+  size = colorBoard.length;
+  renderBoard();
+  console.log(colorBoard);
+} else {
+  initializeBoard(4);
+}
