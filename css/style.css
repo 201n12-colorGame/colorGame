@@ -16,6 +16,9 @@ h1{
   color: rgb(214, 14, 214);
   text-decoration: underline;
 }
+#intro {
+  margin-top:30px;
+}
 h2{
   font-size: 40px;
   text-align: center;
@@ -97,3 +100,29 @@ nav li {
   text-decoration: none;
   font-size: 30px;
 }
+
+/* Rules Pages */
+#rules_header {
+  height: 40px;
+
+}
+
+#rulesh1 {
+  margin-top: 30px;
+}
+
+.rulesh2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.game_instruct:nth-last-of-type(1n+2) {
+  margin-bottom: 30px;
+}
+
+#rule_list {
+  border: 10px;
+  border-style: solid;
+  padding: 9px;
+}
+
