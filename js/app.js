@@ -1,7 +1,7 @@
 
 var colorBoard = JSON.parse(localStorage.getItem('boardState'));
-var moves = 0;
 var size;
+var moves = parseInt(localStorage.getItem('moves'));
 
 //initialize board state. for now, the entire board is initialized as zeroes.
 var initializeBoard = function (num) {
