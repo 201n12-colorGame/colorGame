@@ -6,6 +6,7 @@ var size;
 //initialize board state. for now, the entire board is initialized as zeroes.
 var initializeBoard = function (num) {
   size = num;
+  moves = 0;
   for (var row = 0; row < num; row++) {
     colorBoard.push([]);
     for (var col = 0; col < num; col++) {
@@ -77,21 +78,25 @@ var tileClickHandler = function (eventObject) {
   // console.log(coord);
 };
 
-// randomizes the board 
-var randomize = function(){
-  
-}
-
 var winHandler = function(){
-  var name = prompt('Congratulations you won! Please enter your name');
+  var name = prompt('Congratulations! You won in ' + moves + ' moves. Please enter your name.');
   var winnerArray = JSON.parse(localStorage.getItem('winnerArr'));
 
   console.log(winnerArray);
-  if (winnerArray === null){
+  if (winnerArray === null){ //if we haven't gotten a winning score yet
     winnerArray = [];
   }
-  winnerArray.push([name, moves]);
+
+  //finds the appropriate position in the winner array to insert the new score
+  var i = 0;
+  while(i < winnerArray.length && moves > winnerArray[i][1]){
+    i++;
+  }
+  winnerArray.splice(i, 0, [name, moves]);
+
   localStorage.setItem('winnerArr', JSON.stringify(winnerArray));
+
+  initializeBoard(size);
 };
 
 
@@ -125,4 +130,4 @@ var checkWin = function(){
 
 //increment moves and write to local storage
 
-initializeBoard(8);
+initializeBoard(4);
