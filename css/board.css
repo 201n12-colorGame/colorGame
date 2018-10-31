@@ -1,10 +1,61 @@
+@font-face {
+    font-family: Games;
+    src: url("fonts/Games.ttf");
+  }
+  @font-face {
+    font-family: VIDEOPHREAK;
+    src: url("fonts/VIDEOPHREAK.ttf");
+  }
+  @font-face {
+    font-family: Pixel-Miners;
+    src: url("fonts/Pixel-Miners.otf");
+  }
+
+body{
+    font-family: Games;
+    color: white;
+    background-color: black;
+    width: 450px;
+    margin: auto;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 3em;
+}
+
+button {
+    font-family: Games;
+    font-size: 38px;
+    background-color: black;
+    color:rgb(230, 4, 4);
+    border: solid;
+    border-color: white;
+    padding-top: 7px;
+    margin-bottom: 15px;
+}
+
+div {
+    height: 40px;
+    width: auto;
+    margin-bottom: 175px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+/* Game related css */
 table {
     border-collapse:separate;
     border-spacing: 4px;
+    margin: auto;
+    height: 400px;
+    width: 400px;
+    margin-bottom: 50px;
 }
 
 .style0{
-    background-color: black;
+    background-color: cyan;
     height: 30px;
     width: 30px;
 }
@@ -14,3 +65,14 @@ table {
     height: 30px;
     width: 30px;
 }
+/* Game related css */
+
+footer a{
+    color: rgb(230, 4, 4);
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center; 
+  }
+  footer a:hover{
+    color: cyan;
+  }
