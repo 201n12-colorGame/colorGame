@@ -16,6 +16,7 @@ var initializeBoard = function (num) {
     }
   }
   localStorage.setItem('boardState', JSON.stringify(colorBoard));
+  localStorage.setItem('moves', moves);
   renderBoard();
 };
 
