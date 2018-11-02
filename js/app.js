@@ -81,6 +81,7 @@ var tileClickHandler = function (eventObject) {
   // console.log(coord);
 };
 
+// stuff that needs doing when player wins
 var winHandler = function(){
   var name = prompt('Congratulations! You won in ' + moves + ' moves. Please enter your name.');
   
