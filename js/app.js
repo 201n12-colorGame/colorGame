@@ -49,6 +49,9 @@ var renderBoard = function () {
 
 var tileClickHandler = function (eventObject) {
   //this is where the magic happens!
+  //play sound effect
+  var pop = new Audio('sounds/popnew.wav');
+  pop.play();
 
   moves++;
   localStorage.setItem('moves', moves);
@@ -83,6 +86,9 @@ var tileClickHandler = function (eventObject) {
 
 // stuff that needs doing when player wins
 var winHandler = function(){
+  var shhhh = new Audio('shhhhnew.wav');
+  shhhh.play();
+
   var name = prompt('Congratulations! You won in ' + moves + ' moves. Please enter your name.');
   
   var mode;
