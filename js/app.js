@@ -126,14 +126,14 @@ var winHandler = function(){
 
 // check if game is won
 var checkWin = function(){
-  var cointainsOne = 0;
+  var containsOne = 0;
   var containsZero = 0;
   var row = 0;
   var col = 0;
 
-  while (!(containsZero && cointainsOne) && row < size){
+  while (!(containsZero && containsOne) && row < size){
     if (colorBoard[row][col]){
-      cointainsOne = 1;
+      containsOne = 1;
     }
     else{
       containsZero = 1;
@@ -145,7 +145,7 @@ var checkWin = function(){
     // console.log(row + ' ' + col + ' ' + colorBoard[row][col]);
   }
 
-  return (row === size);
+  return (!(containsOne && containsZero));
 
   // if(!((colorBoard.findIndex(0) + 1) && (colorBoard.findIndex(1) + 1))){
   //   var name = prompt('Congratulations you win! What is your name?');
