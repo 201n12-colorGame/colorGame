@@ -17,4 +17,5 @@ if(hardScore && hardScore[0][1] < bestScore){
     bestScore = hardScore[0][1];
 }
 
-scoreHolder.textContent = bestScore;
+if (bestScore != 999999){
+scoreHolder.textContent = bestScore;}
